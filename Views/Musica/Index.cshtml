@@ -1,0 +1,41 @@
+@model IEnumerable<SoundFy.Models.Musica>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Músicas</h1>
+
+<p>
+    <a asp-action="Create">Adcionar nova música</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMusica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Album)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMusica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Album.AlbumId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MusicaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.MusicaId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.MusicaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

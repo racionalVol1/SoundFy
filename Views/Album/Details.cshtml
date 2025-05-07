@@ -1,0 +1,51 @@
+@model SoundFy.Models.Album
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Álbum</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeAlbum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeAlbum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Músicas do álbum</h4>
+    <hr />
+    @if (Model.Musicas != null && Model.Musicas.Any())
+    {
+        <ul class="list-group">
+            @foreach (var musica in Model.Musicas)
+            {
+                <li class="list-group-item">
+                    @musica.NomeMusica
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Este álbum ainda não possui músicas.</p>
+    }
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.AlbumId" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Votlar a lista de álbuns</a>
+</div>
