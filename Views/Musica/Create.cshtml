@@ -1,37 +1,51 @@
 @model SoundFy.Models.Musica
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar Músicas";
 }
 
-<h1>Adcionar músicas</h1>
+<h1>Adicionar Músicas ao Álbum: @ViewBag.AlbumNome</h1>
 
-<h4>Música</h4>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-8">
+        <form id="musicasForm" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NomeMusica" class="control-label"></label>
-                <input asp-for="NomeMusica" class="form-control" />
-                <span asp-validation-for="NomeMusica" class="text-danger"></span>
+
+            <div id="musicasContainer">
+                <div class="musica-group mb-3">
+                    <label class="control-label">Nome da Música</label>
+                    <input name="NomeMusica" class="form-control" required />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AlbumId" class="control-label"></label>
-                <select asp-for="AlbumId" class ="form-control" asp-items="ViewBag.AlbumId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Adcionar" class="btn btn-primary" />
-            </div>
+
+            <input type="hidden" name="AlbumId" value="@ViewBag.AlbumId" />
+
+            <button type="button" class="btn btn-outline-primary" onclick="adicionarMusica()">+ Adicionar outra música</button>
+            <br /><br />
+
+            <button type="submit" class="btn btn-success">Salvar Músicas</button>
+            <a asp-controller="Album" asp-action="Details" asp-route-id="@ViewBag.AlbumId" class="btn btn-secondary ml-2">Voltar</a>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Votlar a lista de músicas</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function adicionarMusica() {
+            const container = document.getElementById('musicasContainer');
+            const index = container.children.length;
+
+            const novaMusica = document.createElement('div');
+            novaMusica.classList.add('musica-group', 'mb-3');
+
+            novaMusica.innerHTML = `
+                <label class="control-label">Nome da Música</label>
+                <input name="NomeMusica" class="form-control" required />
+            `;
+
+            container.appendChild(novaMusica);
+        }
+    </script>
 }

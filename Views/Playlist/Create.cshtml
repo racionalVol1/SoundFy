@@ -17,7 +17,7 @@
                 <input asp-for="NomePlaylist" class="form-control" />
                 <span asp-validation-for="NomePlaylist" class="text-danger"></span>
             </div>
-           <div class="form-group">
+            <div class="form-group">
                 <label class="control-label">Escolha uma música</label>
                 <select name="MusicaId" class="form-control" asp-items="ViewBag.MusicaId"></select>
                 <span asp-validation-for="PlaylistMusicas" class="text-danger"></span>
@@ -25,6 +25,13 @@
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
+            using (Html.BeginForm("Pesquisar", "Home", FormMethod.Get)) {
+            <div class="form-group">
+                <label for="pesquisa">Pesquisar:</label>
+                <input type="text" class="form-control" id="pesquisa" name="pesquisa" placeholder="Digite sua pesquisa">
+            </div>
+            <button type="submit" class="btn btn-primary">Pesquisar</button>
+            }
         </form>
     </div>
 </div>
@@ -34,5 +41,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

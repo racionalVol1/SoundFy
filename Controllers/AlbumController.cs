@@ -52,7 +52,7 @@ namespace SoundFy
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlbumId,NomeAlbum,User")] Album album)
+        public async Task<IActionResult> Create([Bind("AlbumId,NomeAlbum")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -71,11 +71,15 @@ namespace SoundFy
                 return NotFound();
             }
 
-            var album = await _context.Albuns.FindAsync(id);
+            var album = await _context.Albuns
+                .Include(a => a.Musicas) // Incluir as músicas associadas
+                .FirstOrDefaultAsync(m => m.AlbumId == id);
+
             if (album == null)
             {
                 return NotFound();
             }
+
             return View(album);
         }
 

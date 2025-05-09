@@ -22,8 +22,8 @@ namespace SoundFy
         // GET: Musica
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Musicas.Include(m => m.Album);
-            return View(await applicationDbContext.ToListAsync());
+            var musicas = _context.Musicas.Include(m => m.Album);
+            return View(await musicas.ToListAsync());
         }
 
         // GET: Musica/Details/5
@@ -46,9 +46,16 @@ namespace SoundFy
         }
 
         // GET: Musica/Create
-        public IActionResult Create()
+
+        [HttpGet]
+        public async Task<IActionResult> Create(int id) // id = AlbumId
         {
-            ViewData["AlbumId"] = new SelectList(_context.Albuns, "AlbumId", "AlbumId");
+            var album = await _context.Albuns.FindAsync(id);
+            if (album == null) return NotFound();
+
+            ViewBag.AlbumId = album.AlbumId;
+            ViewBag.AlbumNome = album.NomeAlbum;
+
             return View();
         }
 
@@ -57,18 +64,35 @@ namespace SoundFy
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MusicaId,NomeMusica,AlbumId")] Musica musica)
+        public async Task<IActionResult> Create(List<string> NomeMusica, int AlbumId)
         {
+            if (NomeMusica == null || NomeMusica.Count == 0)
+            {
+                ModelState.AddModelError("", "Adicione pelo menos uma música.");
+            }
+
             if (ModelState.IsValid)
             {
-                _context.Add(musica);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["AlbumId"] = new SelectList(_context.Albuns, "AlbumId", "AlbumId", musica.AlbumId);
-            return View(musica);
-        }
+                foreach (var nome in NomeMusica)
+                {
+                    var musica = new Musica
+                    {
+                        NomeMusica = nome,
+                        AlbumId = AlbumId
+                    };
+                    _context.Musicas.Add(musica);
+                }
 
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Details", "Album", new { id = AlbumId });
+            }
+
+            var album = await _context.Albuns.FindAsync(AlbumId);
+            ViewBag.AlbumId = AlbumId;
+            ViewBag.AlbumNome = album?.NomeAlbum;
+
+            return View();
+        }
         // GET: Musica/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -147,18 +171,20 @@ namespace SoundFy
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var musica = await _context.Musicas.FindAsync(id);
-            if (musica != null)
+            if (musica == null)
             {
-                _context.Musicas.Remove(musica);
+                return NotFound();
             }
 
+            _context.Musicas.Remove(musica);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return RedirectToAction("Edit", "Album", new { id = musica.AlbumId }); // Redireciona para a edição do álbum
         }
 
         private bool MusicaExists(int id)
         {
             return _context.Musicas.Any(e => e.MusicaId == id);
-        }
+        }       
     }
 }

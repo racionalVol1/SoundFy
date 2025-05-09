@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoundFy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a857e927d37311d00a642c7f8eb984965e8abce6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoundFy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoundFy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

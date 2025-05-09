@@ -45,44 +45,4 @@ button.accept-policy[b-bt2xjhvr5s] {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
-<<<<<<< HEAD
 }
-
-/* Navbar */
-
-.main[b-bt2xjhvr5s] {
-  display: flex;
-}
-
-.sidebar[b-bt2xjhvr5s] {
-  background-color: #535353;
-  border-radius: 10px;
-  align-items: center;
-  height: 100vh;
-  margin-left: 0px;
-  padding: 10px;
-}
-
-.sidebar h3[b-bt2xjhvr5s] {
-  color: white;
-}
-
-.sidebar a[b-bt2xjhvr5s] {
-  display: flex;
-  text-align: center;
-  color: white;
-  padding: 5px;
-}
-
-.footer-sidebar[b-bt2xjhvr5s] {
-  color: white;
-}
-
-.container h2[b-bt2xjhvr5s] {
-  color: white;
-}
-
-
-=======
-}
->>>>>>> e0d1d7af66cf31040328c4febcbb49ca6747b5b5

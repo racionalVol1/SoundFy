@@ -1,39 +1,57 @@
 @model SoundFy.Models.Album
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Álbum";
 }
 
-<h1>Editar</h1>
+<h1>Editar álbum: @Model.NomeAlbum</h1>
 
-<h4>Álbum</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AlbumId" />
-            <div class="form-group">
-                <label asp-for="NomeAlbum" class="control-label"></label>
-                <input asp-for="NomeAlbum" class="form-control" />
-                <span asp-validation-for="NomeAlbum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User" class="control-label"></label>
-                <input asp-for="User" class="form-control" />
-                <span asp-validation-for="User" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<form method="post">
+    <div class="form-group">
+        <label for="NomeAlbum">Nome do álbum</label>
+        <input type="text" class="form-control" id="NomeAlbum" name="NomeAlbum" value="@Model.NomeAlbum" />
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Votlar a lista de álbuns</a>
-</div>
+    <br />
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+</form>
+
+<hr />
+
+<h5>Músicas neste Álbum</h5>
+
+@if (Model.Musicas != null && Model.Musicas.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome da música</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var musica in Model.Musicas)
+            {
+                <tr>
+                    <td>@musica.NomeMusica</td>
+                    <td>
+                        <a asp-controller="Musica" asp-action="Edit" asp-route-id="@musica.MusicaId"
+                            class="btn btn-warning">Editar</a>
+                        |
+                        <form method="post" asp-action="Delete" asp-route-id="@musica.MusicaId" style="display:inline;">
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Tem certeza que deseja excluir esta música?')">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
+else
+{
+    <p>Este álbum não tem músicas.</p>
+}
+
+<a asp-action="Details" asp-route-id="@Model.AlbumId" class="btn btn-secondary">Voltar aos Detalhes do Álbum</a>
