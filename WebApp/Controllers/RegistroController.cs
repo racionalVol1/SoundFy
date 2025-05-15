@@ -13,8 +13,14 @@ namespace SoundFy.Controllers
         [HttpPost]
         public IActionResult Registrar(string email, string senha)
         {
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
+            UsuarioRepository usuarioRepository = new UsuarioRepository();  
 
+            if (usuarioRepository.ValidaUsuarioExistente(email))
+            {
+                // return RedirectToAction("Index", "login");
+                ViewBag.Mensagem = "Usuario ja cadastrado.";
+                return View("Index");
+            }                            
             if (usuarioRepository.RegistrarUsuario(email, senha))
             {
                 return RedirectToAction("Index", "login");

@@ -8,68 +8,59 @@ namespace SoundFy.Data
 
         public bool ValidarUsuario(string email, string senha)
         {
-            try
-            {
-                using var conexao = new SQLiteConnection(caminhoBanco);
-                conexao.Open();
-                Console.WriteLine("Conexão com banco de dados realizada com sucesso!");
+            using var conexao = new SQLiteConnection(caminhoBanco);
+            conexao.Open();
+            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
 
-                string selectSql = "SELECT * FROM Usuario WHERE Email = @Email AND Senha = @Senha";
+            string selectSql = "SELECT * FROM Usuario WHERE Email = @Email AND Senha = @Senha";
 
-                using var cmd = new SQLiteCommand(selectSql, conexao);
-                cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Senha", senha);
+            using var cmd = new SQLiteCommand(selectSql, conexao);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", senha);
 
-                using var reader = cmd.ExecuteReader();
-                return reader.Read();
-            }
-            catch (SQLiteException ex)
-            {
-                Console.WriteLine($"Erro ao acessar banco de dados: {ex.Message}");
-            }
-            catch (InvalidOperationException ex)
-            {
-                Console.WriteLine($"Erro de operação invalida: {ex.Message}");
-            }           
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao validar usuario: {ex.Message}");
-            }
-
-            return false;
+            using var reader = cmd.ExecuteReader();
+            return reader.Read();
         }
 
         public bool RegistrarUsuario(string email, string senha)
         {
+            using var conexao = new SQLiteConnection(caminhoBanco);
+            conexao.Open();
+            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
+
+            string insertSql = "INSERT INTO Usuario (Email, Senha) VALUES (@Email, @Senha)";
+
+            using var cmd = new SQLiteCommand(insertSql, conexao);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+
             try
             {
-                using var conexao = new SQLiteConnection(caminhoBanco);
-                conexao.Open();
-                Console.WriteLine("Conexão com banco de dados realizada com sucesso!");
-
-                string insertSql = "INSERT INTO Usuario (Email, Senha) VALUES (@Email, @Senha)";
-
-                using var cmd = new SQLiteCommand(insertSql, conexao);
-                cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Senha", senha);
-
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (SQLiteException ex)
-            {
-                Console.WriteLine($"Erro ao acessar banco de dados: {ex.Message}");
-            }
-            catch (InvalidOperationException ex)
-            {
-                Console.WriteLine($"Erro de operação invalida: {ex.Message}");
-            }           
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao registrar usuario: {ex.Message}");
+                Console.WriteLine($"Erro ao registrar usuário: {ex.Message}");
+                return false;
             }
-
-            return false;
         }
+
+        //TO UP
+        public bool ValidaUsuarioExistente(string email)
+        {
+            using var conexao = new SQLiteConnection(caminhoBanco);
+            conexao.Open();
+            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
+
+            string selectSql = "SELECT * FROM Usuario WHERE Email = @Email";
+
+            using var cmd = new SQLiteCommand(selectSql, conexao);
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            using var reader = cmd.ExecuteReader();
+            return reader.Read();
+        }
+
     }
 }
