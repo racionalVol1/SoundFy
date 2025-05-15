@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zi4NbsCaNeQ=",
+  "dgSpecHash": "BkaOScsrz6Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\p051605\\OneDrive - rede.sp\\Área de Trabalho\\Projeto\\SoundFy\\WebApp\\WebApp.csproj",
+  "projectFilePath": "c:\\Users\\p051605\\OneDrive - rede.sp\\Área de Trabalho\\Projeto\\SoundFy\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\p051605\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\p051605\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

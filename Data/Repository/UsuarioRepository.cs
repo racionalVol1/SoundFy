@@ -41,7 +41,7 @@ namespace SoundFy.Data
             try
             {
                 cmd.ExecuteNonQuery();
-                EnviarEmailConfirmacao(email, token); // Envia e-mail após registrar
+                EnviarEmailConfirmacao(email, token);
                 return true;
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace SoundFy.Data
 
         public void EnviarEmailConfirmacao(string email, string token)
         {
-            var smtpClient = new SmtpClient("localhost") // FakeSMTP
+            var smtpClient = new SmtpClient("localhost")
             {
                 Port = 25,
                 DeliveryMethod = SmtpDeliveryMethod.Network
@@ -84,7 +84,7 @@ namespace SoundFy.Data
             smtpClient.Send(mensagem);
         }
 
-       
+
         public bool ValidaUsuarioExistente(string email)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
@@ -100,5 +100,19 @@ namespace SoundFy.Data
             return reader.Read();
         }
 
+
+        public bool AlterarSenha(string email, string senha)
+        {
+            using var conexao = new SQLiteConnection(caminhoBanco);
+            conexao.Open();
+
+            string updateSql = "UPDATE Usuario SET Senha = @Senha WHERE Email = @Email";
+
+            using var cmd = new SQLiteCommand(updateSql, conexao);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
     }
 }

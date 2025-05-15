@@ -5,7 +5,7 @@ using SoundFy.Data;
 namespace SoundFy.Controllers
 {
     public class LoginController() : Controller
-    {        
+    {
         public IActionResult Index()
         {
             return View();
@@ -23,6 +23,32 @@ namespace SoundFy.Controllers
 
             ViewBag.Mensagem = "Email ou senha inválidos.";
             return View("Index");
-        }               
+        }
+
+        public IActionResult RecuperarSenha()
+        {
+            return View("RecuperarSenha");
+        }
+
+        [HttpPost]
+        public IActionResult AlterarSenha(string email, string senha, string confirmarSenha)
+        {
+            if (senha != confirmarSenha)
+            {
+                ViewBag.Mensagem = "As senhas não coincidem.";
+                return View("TrocarSenha");
+            }
+
+            UsuarioRepository usuarioRepository = new UsuarioRepository();
+
+            if (usuarioRepository.AlterarSenha(email, senha))
+            {
+                TempData["Mensagem"] = "Senha alterada com sucesso. Faça login com sua nova senha.";
+                return RedirectToAction("Login");
+            }
+
+            ViewBag.Mensagem = "Erro ao alterar a senha.";
+            return View("TrocarSenha");
+        }
     }
 }

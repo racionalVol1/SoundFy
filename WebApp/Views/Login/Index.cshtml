@@ -13,12 +13,14 @@
 	</div>
 	<button type="submit">Login</button>
 
-	<a href="@Url.Action("Index", "Registro")">Registrar</a>	
+	<a href="@Url.Action("Index", "Registro")">Registrar</a>
 
-	@if (ViewBag.Mensagem != null)
+	<a href="@Url.Action("RecuperarSenha")">Recuperar senha</a>
+
+	@if (TempData["Mensagem"] != null)
 	{
-		<div>
-			<p>@ViewBag.Mensagem</p>
+		<div class="alert alert-success">
+			@TempData["Mensagem"]
 		</div>
 	}
 }
