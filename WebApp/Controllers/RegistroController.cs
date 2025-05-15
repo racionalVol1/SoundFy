@@ -17,9 +17,9 @@ namespace SoundFy.Controllers
 
             if (usuarioRepository.ValidaUsuarioExistente(email))
             {
-                // return RedirectToAction("Index", "login");
-                ViewBag.Mensagem = "Usuario ja cadastrado.";
-                return View("Index");
+                return RedirectToAction("index", "login");
+                //ViewBag.Mensagem = "Usuario ja cadastrado.";
+                //return View("Index");
             }                            
             if (usuarioRepository.RegistrarUsuario(email, senha))
             {
@@ -33,9 +33,17 @@ namespace SoundFy.Controllers
         }
 
         [HttpGet]
-        public ActionResult Registar()
+        public IActionResult ConfirmarEmail(string email, string token)
         {
-            return View();
+            UsuarioRepository usuarioRepository = new UsuarioRepository();
+
+            bool confirmado = usuarioRepository.ConfirmarEmail(email, token);
+
+            TempData["Mensagem"] = confirmado
+                ? "E-mail confirmado com sucesso!"
+                : "Erro ao confirmar e-mail.";
+
+            return RedirectToAction("Index", "Login");
         }
     }
 }

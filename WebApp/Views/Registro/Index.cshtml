@@ -12,4 +12,11 @@
         <input type="password" id="senha" name="senha" required />
     </div>
     <button type="submit">Registrar</button>
+
+    @if (ViewBag.Mensagem != null)
+    {
+        <div>
+            <p>@ViewBag.Mensagem</p>
+        </div>
+    }
 }
