@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Data.Services;
+using Microsoft.AspNetCore.Mvc;
 using SoundFy.Data;
 
 
@@ -17,7 +18,10 @@ namespace SoundFy.Controllers
             UsuarioRepository usuarioRepository = new UsuarioRepository();
 
             if (usuarioRepository.ValidarUsuario(email, senha))
-            {
+            {                                
+                var emailService = new EmailServices();
+                emailService.EnviarEmailLogin(email);
+
                 return RedirectToAction("Index", "PaginaInicial");
             }
 

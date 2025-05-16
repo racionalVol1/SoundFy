@@ -1,5 +1,5 @@
 ﻿using System.Data.SQLite;
-using System.Net.Mail;
+using Data.Services;
 
 namespace SoundFy.Data
 {
@@ -41,8 +41,16 @@ namespace SoundFy.Data
             try
             {
                 cmd.ExecuteNonQuery();
-                EnviarEmailConfirmacao(email, token);
+                
+                var emailService = new EmailServices();
+                emailService.EnviarEmailConfirmacao(email, token);
+
                 return true;
+            }
+            catch (SQLiteException)
+            {
+                Console.WriteLine("Erro: E-mail já cadastrado.");
+                return false;
             }
             catch (Exception ex)
             {
@@ -50,40 +58,6 @@ namespace SoundFy.Data
                 return false;
             }
         }
-
-        public bool ConfirmarEmail(string email, string token)
-        {
-            using var conexao = new SQLiteConnection(caminhoBanco);
-            conexao.Open();
-
-            string sql = "UPDATE Usuario SET EmailConfirmado = 1 WHERE Email = @Email AND TokenConfirmacao = @Token";
-
-            using var cmd = new SQLiteCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Token", token);
-
-            return cmd.ExecuteNonQuery() > 0;
-        }
-
-        public void EnviarEmailConfirmacao(string email, string token)
-        {
-            var smtpClient = new SmtpClient("localhost")
-            {
-                Port = 25,
-                DeliveryMethod = SmtpDeliveryMethod.Network
-            };
-
-            string link = $"http://localhost:7105/Registro/ConfirmarEmail?email={email}&token={token}";
-
-            var mensagem = new MailMessage("nao-responda@soundfy.com", email)
-            {
-                Subject = "Confirme seu e-mail",
-                Body = $"Clique no link para confirmar seu e-mail: {link}"
-            };
-
-            smtpClient.Send(mensagem);
-        }
-
 
         public bool ValidaUsuarioExistente(string email)
         {
