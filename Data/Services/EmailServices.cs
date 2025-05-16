@@ -45,7 +45,7 @@ namespace Data.Services
             smtpClient.Send(mensagem);
         }
 
-        public void EnviarEmailLogin(string email)
+        public void EnviarEmailLogin(string email, string ip, string navegador)
         {
             var smtpClient = new SmtpClient("localhost")
             {
@@ -54,7 +54,9 @@ namespace Data.Services
             };
 
             string dataHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            string corpo = $"Seu login foi realizado com sucesso em {dataHora}.";
+            string corpo = $"Seu login foi realizado com sucesso em {dataHora}.\n" +
+                           $"IP de acesso: {ip}\n" +
+                           $"Navegador: {navegador}";
 
             var mensagem = new MailMessage("nao-responda@soundfy.com", email)
             {
@@ -64,6 +66,5 @@ namespace Data.Services
 
             smtpClient.Send(mensagem);
         }
-
     }
 }

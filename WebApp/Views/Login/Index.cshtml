@@ -17,6 +17,13 @@
 
 	<a href="@Url.Action("RecuperarSenha")">Recuperar senha</a>
 
+	@if (ViewBag.Mensagem != null)
+	{
+		<div>
+			<p>@ViewBag.Mensagem</p>
+		</div>
+	}
+
 	@if (TempData["Mensagem"] != null)
 	{
 		<div class="alert alert-success">
