@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\dev\\Projeto estagio\\SoundFy\\",
+  "WorkspaceRootPath": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\data\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|solutionrelative:data\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\dev\\projeto estagio\\soundfy\\data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|solutionrelative:data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\controllers\\paginainicialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\paginainicialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApp\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "WebApp\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-16T14:38:35.889Z",
+              "DocumentIndex": 1,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repository\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Repository\\UsuarioRepository.cs*",
+              "RelativeToolTip": "Data\\Repository\\UsuarioRepository.cs*",
+              "ViewState": "AgIAAAEAAAAAAAAAAIAwwDgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T14:31:26.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "EmailServices.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Services\\EmailServices.cs",
+              "RelativeDocumentMoniker": "Data\\Services\\EmailServices.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Services\\EmailServices.cs",
+              "RelativeToolTip": "Data\\Services\\EmailServices.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIAwwCIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T14:37:59.37Z",
+              "WhenOpened": "2025-05-19T14:31:26.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RegistroController.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\RegistroController.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\RegistroController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCMAAAA9AAAAAAAAAA==",
+              "Title": "PaginaInicialController.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\PaginaInicialController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\PaginaInicialController.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\PaginaInicialController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\PaginaInicialController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T00:44:04.936Z"
+              "WhenOpened": "2025-05-19T14:31:26.096Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repository\\UsuarioRepository.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
-              "RelativeToolTip": "Data\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA1wDgAAAAjAAAAAAAAAA==",
+              "Title": "RegistroController.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\RegistroController.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\RegistroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T00:42:05.517Z"
+              "WhenOpened": "2025-05-19T14:31:26.114Z",
+              "EditorCaption": ""
             }
           ]
         }

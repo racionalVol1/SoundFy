@@ -50,12 +50,11 @@ namespace SoundFy.Data
 
             string token = Guid.NewGuid().ToString();
 
-            string insertSql = "INSERT INTO Usuario (Email, Senha, EmailConfirmado, TokenConfirmacao) VALUES (@Email, @Senha, 0, @Token)";
+            string insertSql = "INSERT INTO Usuario (Email, Senha) VALUES (@Email, @Senha)";
 
             using var cmd = new SQLiteCommand(insertSql, conexao);
             cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Senha", senha);
-            cmd.Parameters.AddWithValue("@Token", token);
+            cmd.Parameters.AddWithValue("@Senha", senha);          
 
             try
             {
