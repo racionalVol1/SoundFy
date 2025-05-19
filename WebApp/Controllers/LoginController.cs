@@ -8,11 +8,13 @@ namespace SoundFy.Controllers
     {
         private static Dictionary<string, int> tentativasLogin = new();
 
+        //Retorno de view da pagina de login
         public IActionResult Index()
         {
             return View();
         }
 
+        //Autenticação do usuario
         [HttpPost]
         public IActionResult Autenticar(string email, string senha, string? captcha)
         {
@@ -54,30 +56,11 @@ namespace SoundFy.Controllers
                 return View("Index");
             }
         }
+
+        //Retorno de view a pagina de recuperar senha
         public IActionResult RecuperarSenha()
         {
             return View("RecuperarSenha");
-        }
-
-        [HttpPost]
-        public IActionResult AlterarSenha(string email, string senha, string confirmarSenha)
-        {
-            if (senha != confirmarSenha)
-            {
-                ViewBag.Mensagem = "As senhas não coincidem.";
-                return View("TrocarSenha");
-            }
-
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
-
-            if (usuarioRepository.AlterarSenha(email, senha))
-            {
-                TempData["Mensagem"] = "Senha alterada com sucesso. Faça login com sua nova senha.";
-                return RedirectToAction("Login");
-            }
-
-            ViewBag.Mensagem = "Erro ao alterar a senha.";
-            return View("TrocarSenha");
-        }
+        }      
     }
 }

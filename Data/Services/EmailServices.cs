@@ -9,9 +9,10 @@ namespace Data.Services
 {
     public class EmailServices
     {
-
+        //Caminho do banco de dados
         string caminhoBanco = $@"Data Source=""{Path.Combine(AppContext.BaseDirectory, "BancoDeDados", "SoundFy.db")}""";
 
+        //Metodo para confimar email ao logar
         public bool ConfirmarEmail(string email, string token)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
@@ -26,6 +27,7 @@ namespace Data.Services
             return cmd.ExecuteNonQuery() > 0;
         }
 
+        //Metodo para enviar email de confirmação ao criar conta
         public void EnviarEmailConfirmacao(string email, string token)
         {
             var smtpClient = new SmtpClient("localhost")
@@ -45,6 +47,7 @@ namespace Data.Services
             smtpClient.Send(mensagem);
         }
 
+        //Metodo para enviar email de login
         public void EnviarEmailLogin(string email, string ip, string navegador)
         {
             var smtpClient = new SmtpClient("localhost")

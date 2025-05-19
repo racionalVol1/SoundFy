@@ -5,8 +5,10 @@ namespace SoundFy.Data
 {
     public class UsuarioRepository
     {
+        //Caminho do banco de dados
         string caminhoBanco = $@"Data Source=""{Path.Combine(AppContext.BaseDirectory, "BancoDeDados", "SoundFy.db")}""";
 
+        //Metodo para validar o usuario
         public bool ValidarUsuario(string email, string senha)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
@@ -22,7 +24,24 @@ namespace SoundFy.Data
             using var reader = cmd.ExecuteReader();
             return reader.Read();
         }
+        
+        //Metodo para validar se usario esta cadastrado
+         public bool ValidaUsuarioExistente(string email)
+        {
+            using var conexao = new SQLiteConnection(caminhoBanco);
+            conexao.Open();
+            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
 
+            string selectSql = "SELECT * FROM Usuario WHERE Email = @Email";
+
+            using var cmd = new SQLiteCommand(selectSql, conexao);
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            using var reader = cmd.ExecuteReader();
+            return reader.Read();
+        }
+
+        //Metodo para registrar o usuario e adcionar no DB
         public bool RegistrarUsuario(string email, string senha)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
@@ -41,7 +60,7 @@ namespace SoundFy.Data
             try
             {
                 cmd.ExecuteNonQuery();
-                
+
                 var emailService = new EmailServices();
                 emailService.EnviarEmailConfirmacao(email, token);
 
@@ -58,35 +77,6 @@ namespace SoundFy.Data
                 return false;
             }
         }
-
-        public bool ValidaUsuarioExistente(string email)
-        {
-            using var conexao = new SQLiteConnection(caminhoBanco);
-            conexao.Open();
-            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
-
-            string selectSql = "SELECT * FROM Usuario WHERE Email = @Email";
-
-            using var cmd = new SQLiteCommand(selectSql, conexao);
-            cmd.Parameters.AddWithValue("@Email", email);
-
-            using var reader = cmd.ExecuteReader();
-            return reader.Read();
-        }
-
-
-        public bool AlterarSenha(string email, string senha)
-        {
-            using var conexao = new SQLiteConnection(caminhoBanco);
-            conexao.Open();
-
-            string updateSql = "UPDATE Usuario SET Senha = @Senha WHERE Email = @Email";
-
-            using var cmd = new SQLiteCommand(updateSql, conexao);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Senha", senha);
-
-            return cmd.ExecuteNonQuery() > 0;
-        }
+        
     }
 }
