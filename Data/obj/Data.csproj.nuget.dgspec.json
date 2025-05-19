@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj": {}
+    "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj": {}
   },
   "projects": {
-    "c:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj": {
+    "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "c:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj",
+        "projectPath": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\Guilherme Perondi\\.nuget\\packages\\",
-        "outputPath": "c:\\dev\\Projeto estagio\\SoundFy\\Data\\obj\\",
+        "outputPath": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
