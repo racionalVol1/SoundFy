@@ -1,0 +1,19 @@
+﻿@using (Html.BeginForm("ValidarCodigo", "Login", FormMethod.Post))
+{
+    <h2>Validar código</h2>
+    <form asp-action="ValidarCodigo" method="post">
+        <div class="form-group">
+            <label>Informe o código enviado por email</label>
+            <input name="codigo" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Validar</button>
+    </form>
+}
+
+@if (ViewBag.Mensagem != null)
+{
+    <div class="alert alert-info mt-3">
+        <p>@ViewBag.Mensagem</p>
+    </div>
+}

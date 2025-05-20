@@ -39,10 +39,10 @@ namespace SoundFy.Controllers
         }
 
         [HttpGet]
-        public IActionResult ConfirmarEmail(string email, string token)
+        public IActionResult ConfirmarEmail(string email)
         {
             
-            var confirmado = emailServices.ConfirmarEmail(email, token);
+            var confirmado = emailServices.ConfirmarEmail(email);
 
             TempData["Mensagem"] = confirmado
                 ? "E-mail confirmado com sucesso!"

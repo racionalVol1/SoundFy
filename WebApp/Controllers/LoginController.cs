@@ -10,7 +10,7 @@ namespace SoundFy.Controllers
 
         //Retorno de view da pagina de login
         public IActionResult Index()
-        {
+       {
             return View();
         }
 
@@ -58,9 +58,49 @@ namespace SoundFy.Controllers
         }
 
         //Retorno de view a pagina de recuperar senha
-        public IActionResult RecuperarSenha()
+        public IActionResult RecuperarConta()
         {
-            return View("RecuperarSenha");
-        }      
+            return View("RecuperarConta");
+        }
+
+        //Validação de email para recuperar conta
+        [HttpPost]
+        public IActionResult RecuperarConta(string email)
+        {
+            UsuarioRepository usuarioRepository = new UsuarioRepository();
+            if (usuarioRepository.ValidaUsuarioExistente(email))
+            {
+                var emailService = new EmailServices();
+                emailService.EnviarCodigoRecuperacao(email);
+                ViewBag.Mensagem = "Um e-mail de recuperação foi enviado para você.";
+            }
+            else
+            {
+                ViewBag.Mensagem = "E-mail não encontrado.";
+            }
+            return View("ValidarCodigo");
+        }
+
+        //Retorno de view a pagina validar codigo
+        public IActionResult ValidarCodigo()
+        {
+            return View("ValidarCodigo");
+        }
+
+        //Validação do código de recuperação
+        [HttpPost]
+        public IActionResult ValidarCodigo(string codigo)
+        {
+            var emailService = new EmailServices();
+            if (emailService.ValidarCodigoRecuperacao(codigo))
+            {
+                return RedirectToAction("Index", "PaginaInicial");
+            }
+            else
+            {
+                ViewBag.Mensagem = "Código inválido.";
+                return View("ValidarCodigo");
+            }
+        }
     }
 }

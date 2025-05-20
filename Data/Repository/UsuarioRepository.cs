@@ -61,7 +61,7 @@ namespace SoundFy.Data
                 cmd.ExecuteNonQuery();
 
                 var emailService = new EmailServices();
-                emailService.EnviarEmailConfirmacao(email, token);
+                emailService.EnviarEmailConfirmacao(email);
 
                 return true;
             }
@@ -75,7 +75,6 @@ namespace SoundFy.Data
                 Console.WriteLine($"Erro ao registrar usuário: {ex.Message}");
                 return false;
             }
-        }
-        
+        }        
     }
 }
