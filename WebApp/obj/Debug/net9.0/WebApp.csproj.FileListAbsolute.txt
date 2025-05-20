@@ -248,5 +248,5 @@ C:\dev\Projeto estagio\SoundFy\WebApp\obj\Debug\net9.0\WebApp.csproj.Up2Date
 C:\dev\Projeto estagio\SoundFy\WebApp\obj\Debug\net9.0\WebApp.genruntimeconfig.cache
 C:\dev\Projeto estagio\SoundFy\WebApp\obj\Debug\net9.0\ref\WebApp.dll
 C:\Users\p051605\OneDrive - rede.sp\Área de Trabalho\Projeto\SoundFy\WebApp\bin\Debug\net9.0\BancoDeDados\SoundFy.db
-C:\Users\p051605\OneDrive - rede.sp\Área de Trabalho\Projeto\SoundFy\WebApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\dev\Projeto estagio\SoundFy\WebApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\p051605\OneDrive - rede.sp\Área de Trabalho\Projeto\SoundFy\WebApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

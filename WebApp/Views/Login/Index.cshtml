@@ -14,7 +14,7 @@
     @if (ViewBag.ExibirCaptcha != null && ViewBag.ExibirCaptcha)
     {
         <div>
-            <label for="captcha">Digite o código: 1234</label>
+            <label for="captcha">Digite o código: @ViewBag.ValorCaptcha</label>
             <input type="text" id="captcha" name="captcha" required />
         </div>
     }

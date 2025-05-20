@@ -48,25 +48,35 @@ namespace Data.Services
 
         //Metodo para enviar email de login
         public void EnviarEmailLogin(string email, string ip, string navegador)
-        {
-            var smtpClient = new SmtpClient("localhost")
+        {           
+
+            try
             {
-                Port = 25,
-                DeliveryMethod = SmtpDeliveryMethod.Network
-            };
+                var smtpClient = new SmtpClient("localhost")
+                {
+                    Port = 25,
+                    DeliveryMethod = SmtpDeliveryMethod.Network
+                };
 
-            string dataHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            string corpo = $"Seu login foi realizado com sucesso em {dataHora}.\n" +
-                           $"IP de acesso: {ip}\n" +
-                           $"Navegador: {navegador}";
+                string dataHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                string corpo = $"Seu login foi realizado com sucesso em {dataHora}.\n" +
+                               $"IP de acesso: {ip}\n" +
+                               $"Navegador: {navegador}";
 
-            var mensagem = new MailMessage("nao-responda@soundfy.com", email)
+                var mensagem = new MailMessage("nao-responda@soundfy.com", email)
+                {
+                    Subject = "Confirmação de Login - SoundFy",
+                    Body = corpo
+                };
+
+                smtpClient.Send(mensagem);
+
+            }
+
+            catch (Exception ex)
             {
-                Subject = "Confirmação de Login - SoundFy",
-                Body = corpo
-            };
-
-            smtpClient.Send(mensagem);
+                Console.WriteLine($"Erro ao enviar e-mail: {ex.Message}");
+            }            
         }
 
         //Metodo que gera um código de recuperação e envia para o email

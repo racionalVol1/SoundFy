@@ -8,24 +8,33 @@ namespace SoundFy.Controllers
     {
         private static Dictionary<string, int> tentativasLogin = new();
 
+        private static string PadraoCaptcha; 
+
+
         //Retorno de view da pagina de login
         public IActionResult Index()
-       {
+        {            
             return View();
         }
+
 
         //Autenticação do usuario
         [HttpPost]
         public IActionResult Autenticar(string email, string senha, string? captcha)
         {
-            if (tentativasLogin.ContainsKey(email) && tentativasLogin[email] >= 3)
+            if (tentativasLogin.ContainsKey(email) && tentativasLogin[email] >= 1)
             {
-                if (string.IsNullOrEmpty(captcha) || captcha != "1234")
+                if (string.IsNullOrEmpty(captcha) || captcha != PadraoCaptcha)
                 {
+                    Random random = new Random();
+                    string codigo = random.Next(100000, 999999).ToString();
+                    PadraoCaptcha = codigo;
+                    ViewBag.ValorCaptcha = codigo;
                     ViewBag.ExibirCaptcha = true;
                     ViewBag.Mensagem = "Por favor, resolva o CAPTCHA para continuar.";
                     return View("Index");
                 }
+
             }
 
             UsuarioRepository usuarioRepository = new UsuarioRepository();
