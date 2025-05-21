@@ -108,8 +108,7 @@ namespace Data.Services
         }
 
         //Metodo pra validar codigo enviado
-
-        private static readonly HashSet<string> codigosRecuperacao = new();
+        private static readonly List<string> codigosRecuperacao = new List<string>();
 
         // Metodo que gera um código de recuperação e envia para o email
         public void EnviarCodigoRecuperacao(string email)

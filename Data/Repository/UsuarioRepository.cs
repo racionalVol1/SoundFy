@@ -24,9 +24,9 @@ namespace SoundFy.Data
             using var reader = cmd.ExecuteReader();
             return reader.Read();
         }
-        
+
         //Metodo para validar se usario esta cadastrado
-         public bool ValidaUsuarioExistente(string email)
+        public bool ValidaUsuarioExistente(string email)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
             conexao.Open();
@@ -54,7 +54,7 @@ namespace SoundFy.Data
 
             using var cmd = new SQLiteCommand(insertSql, conexao);
             cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Senha", senha);          
+            cmd.Parameters.AddWithValue("@Senha", senha);
 
             try
             {

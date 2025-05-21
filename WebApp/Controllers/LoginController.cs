@@ -6,64 +6,56 @@ namespace SoundFy.Controllers
 {
     public class LoginController() : Controller
     {
-        private static Dictionary<string, int> tentativasLogin = new();
 
-        private static string PadraoCaptcha; 
-
+        //Criação de objetos
+        UsuarioRepository usuarioRepository = new UsuarioRepository();
+        EmailServices emailServices = new EmailServices();
 
         //Retorno de view da pagina de login
         public IActionResult Index()
-        {            
+        {
             return View();
         }
 
-
         //Autenticação do usuario
         [HttpPost]
-        public IActionResult Autenticar(string email, string senha, string? captcha)
+        public IActionResult Autenticar(string email, string senha, string captcha = "")
         {
-            if (tentativasLogin.ContainsKey(email) && tentativasLogin[email] >= 1)
+            int tentativas = HttpContext.Session.GetInt32("Tentativas") ?? 0;
+            string? codigoSalvo = HttpContext.Session.GetString("CaptchaCodigo");
+
+            if (tentativas >= 3)
             {
-                if (string.IsNullOrEmpty(captcha) || captcha != PadraoCaptcha)
+                if (string.IsNullOrEmpty(captcha) || captcha != codigoSalvo)
                 {
-                    Random random = new Random();
-                    string codigo = random.Next(100000, 999999).ToString();
-                    PadraoCaptcha = codigo;
-                    ViewBag.ValorCaptcha = codigo;
+                    ViewBag.Mensagem = "Captcha incorreto.";
                     ViewBag.ExibirCaptcha = true;
-                    ViewBag.Mensagem = "Por favor, resolva o CAPTCHA para continuar.";
+                    ViewBag.ValorCaptcha = codigoSalvo; 
                     return View("Index");
                 }
-
             }
-
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
 
             if (usuarioRepository.ValidarUsuario(email, senha))
             {
-                tentativasLogin[email] = 0;
-
-                var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "IP desconhecido";
-                var navegador = Request.Headers["User-Agent"].ToString();
-
-                var emailService = new EmailServices();
-                emailService.EnviarEmailLogin(email, ip, navegador);
-
+                HttpContext.Session.Remove("Tentativas");
+                HttpContext.Session.Remove("CaptchaCodigo");
                 return RedirectToAction("Index", "PaginaInicial");
             }
-            else
+
+            
+            tentativas++;
+            HttpContext.Session.SetInt32("Tentativas", tentativas);
+
+            if (tentativas >= 3)
             {
-                if (tentativasLogin.ContainsKey(email))
-                    tentativasLogin[email]++;
-                else
-                    tentativasLogin[email] = 1;
-
-                if (tentativasLogin[email] >= 3)
-                    ViewBag.ExibirCaptcha = true;
-
-                ViewBag.Mensagem = $"Email ou senha inválidos. Tentativas: {tentativasLogin[email]}";
-                return View("Index");
+                string novoCodigo = new Random().Next(100000, 999999).ToString();
+                HttpContext.Session.SetString("CaptchaCodigo", novoCodigo);
+                ViewBag.ExibirCaptcha = true;
+                ViewBag.ValorCaptcha = novoCodigo;
             }
+
+            ViewBag.Mensagem = "Email ou senha incorretos.";
+            return View("Index");
         }
 
         //Retorno de view a pagina de recuperar senha
@@ -76,7 +68,6 @@ namespace SoundFy.Controllers
         [HttpPost]
         public IActionResult RecuperarConta(string email)
         {
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
             if (usuarioRepository.ValidaUsuarioExistente(email))
             {
                 var emailService = new EmailServices();
@@ -100,8 +91,8 @@ namespace SoundFy.Controllers
         [HttpPost]
         public IActionResult ValidarCodigo(string codigo)
         {
-            var emailService = new EmailServices();
-            if (emailService.ValidarCodigoRecuperacao(codigo))
+
+            if (emailServices.ValidarCodigoRecuperacao(codigo))
             {
                 return RedirectToAction("Index", "PaginaInicial");
             }

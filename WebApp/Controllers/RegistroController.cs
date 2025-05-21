@@ -6,17 +6,17 @@ namespace SoundFy.Controllers
 {
     public class RegistroController() : Controller
     {
-
+        //Criação de objetos
         UsuarioRepository usuarioRepository = new UsuarioRepository();
-
         EmailServices emailServices = new EmailServices();
 
-
+        //Retorno de view da pagina de registro
         public IActionResult Index()
         {
             return View();
         }
 
+        //Metodo para registrar usuario
         [HttpPost]
         public IActionResult Registrar(string email, string senha)
         {
@@ -38,6 +38,7 @@ namespace SoundFy.Controllers
             }
         }
 
+        //Metodo para enviar email de confirmação
         [HttpGet]
         public IActionResult ConfirmarEmail(string email)
         {
