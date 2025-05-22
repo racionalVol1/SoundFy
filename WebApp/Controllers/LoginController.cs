@@ -1,61 +1,67 @@
 ﻿using Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using SoundFy.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace SoundFy.Controllers
 {
-    public class LoginController() : Controller
+    public class LoginController : Controller
     {
 
         //Criação de objetos
         UsuarioRepository usuarioRepository = new UsuarioRepository();
         EmailServices emailServices = new EmailServices();
 
-        //Retorno de view da pagina de login
+        // Gera um captcha de 6 dígitos e salva na sessão
+        private void GerarCaptcha()
+        {
+            var random = new Random();
+            string captcha = random.Next(100000, 999999).ToString();
+            HttpContext.Session.SetString("CaptchaLogin", captcha);
+            ViewBag.Captcha = captcha;
+        }
+
+        // Retorno de view da pagina de login
         public IActionResult Index()
         {
+            GerarCaptcha();
             return View();
         }
 
-        //Autenticação do usuario
-        [HttpPost]
-        public IActionResult Autenticar(string email, string senha, string captcha = "")
+        // Botão para atualizar o captcha
+        public IActionResult AtualizarCaptcha()
         {
-            int tentativas = HttpContext.Session.GetInt32("Tentativas") ?? 0;
-            string? codigoSalvo = HttpContext.Session.GetString("CaptchaCodigo");
+            GerarCaptcha();
+            return RedirectToAction("Index");
+        }
 
-            if (tentativas >= 3)
+        // Autenticação do usuario       
+        [HttpPost]
+        public IActionResult Autenticar(string email, string senha, string captcha)
+        {
+            string? captchaCorreto = HttpContext.Session.GetString("CaptchaLogin");
+            if (captcha != captchaCorreto)
             {
-                if (string.IsNullOrEmpty(captcha) || captcha != codigoSalvo)
-                {
-                    ViewBag.Mensagem = "Captcha incorreto.";
-                    ViewBag.ExibirCaptcha = true;
-                    ViewBag.ValorCaptcha = codigoSalvo; 
-                    return View("Index");
-                }
+                ViewBag.Mensagem = "Captcha incorreto.";
+                GerarCaptcha();
+                return View("Index");
             }
 
             if (usuarioRepository.ValidarUsuario(email, senha))
-            {
-                HttpContext.Session.Remove("Tentativas");
-                HttpContext.Session.Remove("CaptchaCodigo");
+            {               
+                var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "IP desconhecido";
+                var navegador = Request.Headers["User-Agent"].ToString();
+                                
+                emailServices.EnviarEmailLogin(email, ip, navegador);
+
                 return RedirectToAction("Index", "PaginaInicial");
             }
-
-            
-            tentativas++;
-            HttpContext.Session.SetInt32("Tentativas", tentativas);
-
-            if (tentativas >= 3)
+            else
             {
-                string novoCodigo = new Random().Next(100000, 999999).ToString();
-                HttpContext.Session.SetString("CaptchaCodigo", novoCodigo);
-                ViewBag.ExibirCaptcha = true;
-                ViewBag.ValorCaptcha = novoCodigo;
-            }
-
-            ViewBag.Mensagem = "Email ou senha incorretos.";
-            return View("Index");
+                ViewBag.Mensagem = "E-mail ou senha inválidos.";                
+                GerarCaptcha();
+                return View("Index");
+            }            
         }
 
         //Retorno de view a pagina de recuperar senha
@@ -69,9 +75,8 @@ namespace SoundFy.Controllers
         public IActionResult RecuperarConta(string email)
         {
             if (usuarioRepository.ValidaUsuarioExistente(email))
-            {
-                var emailService = new EmailServices();
-                emailService.EnviarCodigoRecuperacao(email);
+            {                
+                emailServices.EnviarCodigoRecuperacao(email);
                 ViewBag.Mensagem = "Um e-mail de recuperação foi enviado para você.";
             }
             else

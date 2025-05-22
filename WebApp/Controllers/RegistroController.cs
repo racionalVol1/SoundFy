@@ -4,7 +4,7 @@ using SoundFy.Data;
 
 namespace SoundFy.Controllers
 {
-    public class RegistroController() : Controller
+    public class RegistroController : Controller
     {
         //Criação de objetos
         UsuarioRepository usuarioRepository = new UsuarioRepository();
@@ -20,16 +20,16 @@ namespace SoundFy.Controllers
         [HttpPost]
         public IActionResult Registrar(string email, string senha)
         {
-           
 
+
+            if (usuarioRepository.RegistrarUsuario(email, senha))
+            {
+                return RedirectToAction("Index", "login");
+            }
             if (usuarioRepository.ValidaUsuarioExistente(email))
             {
                 ViewBag.Mensagem = "Usuario ja cadastrado.";
                 return RedirectToAction("index", "login");
-            }
-            if (usuarioRepository.RegistrarUsuario(email, senha))
-            {
-                return RedirectToAction("Index", "login");
             }
             else
             {
@@ -42,7 +42,7 @@ namespace SoundFy.Controllers
         [HttpGet]
         public IActionResult ConfirmarEmail(string email)
         {
-            
+
             var confirmado = emailServices.ConfirmarEmail(email);
 
             TempData["Mensagem"] = confirmado

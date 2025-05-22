@@ -1,41 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\dev\\Projeto estagio\\SoundFy\\",
+  "WorkspaceRootPath": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\controllers\\paginainicialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\paginainicialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\dev\\projeto estagio\\soundfy\\data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|solutionrelative:data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\dev\\projeto estagio\\soundfy\\data\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\data\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|solutionrelative:data\\services\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C27CB7A2-591C-41B8-BD66-E5E6E2332FF7}|Data\\Data.csproj|solutionrelative:data\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\views\\login\\recuperarconta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\views\\registro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\registro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\views\\login\\recuperarconta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\recuperarconta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\views\\login\\validarcodigo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\views\\login\\validarcodigo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\validarcodigo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\dev\\projeto estagio\\soundfy\\webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\controllers\\paginainicialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\paginainicialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|c:\\users\\p051605\\onedrive - rede.sp\\\u00E1rea de trabalho\\projeto\\soundfy\\webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BD79E-3CDA-4000-7A14-B8AD17938B1D}|WebApp\\WebApp.csproj|solutionrelative:webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,15 +53,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Registro\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Registro\\Index.cshtml",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Registro\\Index.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Registro\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-22T17:20:41.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Program.cs",
+              "RelativeDocumentMoniker": "WebApp\\Program.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Program.cs",
+              "RelativeToolTip": "WebApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:53:54.901Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "ValidarCodigo.cshtml",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\ValidarCodigo.cshtml",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Login\\ValidarCodigo.cshtml",
               "RelativeDocumentMoniker": "WebApp\\Views\\Login\\ValidarCodigo.cshtml",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\ValidarCodigo.cshtml",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Login\\ValidarCodigo.cshtml",
               "RelativeToolTip": "WebApp\\Views\\Login\\ValidarCodigo.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -63,9 +96,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "RecuperarConta.cshtml",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\RecuperarConta.cshtml",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Login\\RecuperarConta.cshtml",
               "RelativeDocumentMoniker": "WebApp\\Views\\Login\\RecuperarConta.cshtml",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\RecuperarConta.cshtml",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Login\\RecuperarConta.cshtml",
               "RelativeToolTip": "WebApp\\Views\\Login\\RecuperarConta.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -73,51 +106,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApp\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Views\\Login\\Index.cshtml",
               "RelativeToolTip": "WebApp\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-20T13:26:57.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T13:26:57.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\LoginController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T16:35:32.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "EmailServices.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Services\\EmailServices.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Services\\EmailServices.cs",
               "RelativeDocumentMoniker": "Data\\Services\\EmailServices.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Services\\EmailServices.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Services\\EmailServices.cs",
               "RelativeToolTip": "Data\\Services\\EmailServices.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAIAwwFwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAMwB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T14:31:26.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Users\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs [Somente Leitura]",
-              "RelativeToolTip": "..\\..\\..\\Users\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs [Somente Leitura]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Guilherme Perondi\\AppData\\Local\\SourceServer\\d9e6c40e7af961d20477ad1d98c7c4a0a85bd62884d95783cd622ba8d7010b0d\\WebApp\\Controllers\\LoginController.cs [Somente Leitura]",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T14:43:36.681Z",
@@ -125,24 +157,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repository\\UsuarioRepository.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\Data\\Repository\\UsuarioRepository.cs",
               "RelativeToolTip": "Data\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAMwC0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T14:31:26.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "PaginaInicialController.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\PaginaInicialController.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\PaginaInicialController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\PaginaInicialController.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\PaginaInicialController.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\PaginaInicialController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\PaginaInicialController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -151,13 +183,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "RegistroController.cs",
-              "DocumentMoniker": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
+              "DocumentMoniker": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\RegistroController.cs",
-              "ToolTip": "C:\\dev\\Projeto estagio\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
+              "ToolTip": "C:\\Users\\p051605\\OneDrive - rede.sp\\\u00C1rea de Trabalho\\Projeto\\SoundFy\\WebApp\\Controllers\\RegistroController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\RegistroController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAnwCYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T14:31:26.114Z",
               "EditorCaption": ""

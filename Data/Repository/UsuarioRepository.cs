@@ -43,21 +43,19 @@ namespace SoundFy.Data
 
         //Metodo para registrar o usuario e adcionar no DB
         public bool RegistrarUsuario(string email, string senha)
-        {
-            using var conexao = new SQLiteConnection(caminhoBanco);
-            conexao.Open();
-            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
-
-            string token = Guid.NewGuid().ToString();
-
-            string insertSql = "INSERT INTO Usuario (Email, Senha) VALUES (@Email, @Senha)";
-
-            using var cmd = new SQLiteCommand(insertSql, conexao);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Senha", senha);
-
+        {                
             try
             {
+                using var conexao = new SQLiteConnection(caminhoBanco);
+                conexao.Open();
+                Console.WriteLine("Conexão com SQLite aberta com sucesso!");
+
+                string insertSql = "INSERT INTO Usuario (Email, Senha) VALUES (@Email, @Senha)";
+
+                using var cmd = new SQLiteCommand(insertSql, conexao);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Senha", senha);
+
                 cmd.ExecuteNonQuery();
 
                 var emailService = new EmailServices();
