@@ -5,18 +5,15 @@ namespace SoundFy.Data
 {
     public class UsuarioRepository
     {
-        //Caminho do banco de dados
-        string caminhoBanco = $@"Data Source=""{Path.Combine(AppContext.BaseDirectory, "BancoDeDados", "SoundFy.db")}""";
+        private readonly string caminhoBanco = @"Data Source=C:\dev\SoundFy\SoundFy\Data\BancoDeDados\SoundFy.db";
 
-        //Metodo para validar o usuario
+        // Valida o usuário com email e senha
         public bool ValidarUsuario(string email, string senha)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
             conexao.Open();
-            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
 
             string selectSql = "SELECT * FROM Usuario WHERE Email = @Email AND Senha = @Senha";
-
             using var cmd = new SQLiteCommand(selectSql, conexao);
             cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@Senha", senha);
@@ -25,15 +22,13 @@ namespace SoundFy.Data
             return reader.Read();
         }
 
-        //Metodo para validar se usario esta cadastrado
+        // Verifica se o usuário já existe no banco de dados
         public bool ValidaUsuarioExistente(string email)
         {
             using var conexao = new SQLiteConnection(caminhoBanco);
             conexao.Open();
-            Console.WriteLine("Conexão com SQLite aberta com sucesso!");
 
             string selectSql = "SELECT * FROM Usuario WHERE Email = @Email";
-
             using var cmd = new SQLiteCommand(selectSql, conexao);
             cmd.Parameters.AddWithValue("@Email", email);
 
@@ -41,38 +36,53 @@ namespace SoundFy.Data
             return reader.Read();
         }
 
-        //Metodo para registrar o usuario e adcionar no DB
-        public bool RegistrarUsuario(string email, string senha)
-        {                
+    //Registra um novo usuário no banco de dados
+        public bool RegistrarUsuario(string email, string senha, string tipo)
+        {
             try
             {
                 using var conexao = new SQLiteConnection(caminhoBanco);
                 conexao.Open();
-                Console.WriteLine("Conexão com SQLite aberta com sucesso!");
 
-                string insertSql = "INSERT INTO Usuario (Email, Senha) VALUES (@Email, @Senha)";
-
+                string insertSql = "INSERT INTO Usuario (Email, Senha, Tipo) VALUES (@Email, @Senha, @Tipo)";
                 using var cmd = new SQLiteCommand(insertSql, conexao);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Senha", senha);
+                cmd.Parameters.AddWithValue("@Tipo", tipo);
 
                 cmd.ExecuteNonQuery();
 
-                var emailService = new EmailServices();
-                emailService.EnviarEmailConfirmacao(email);
+                new EmailServices().EnviarEmailConfirmacao(email);
 
                 return true;
             }
-            catch (SQLiteException)
+            catch (SQLiteException ex)
             {
-                Console.WriteLine("Erro: E-mail já cadastrado.");
+                Console.WriteLine($"Erro SQLite: {ex.Message}");
                 return false;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao registrar usuário: {ex.Message}");
+                Console.WriteLine($"Erro geral: {ex.Message}");
                 return false;
             }
-        }        
+        }
+
+        // Obtém o tipo de usuário baseado no email
+        public string ObterTipoUsuario(string email)
+        {
+            using var conexao = new SQLiteConnection(caminhoBanco);
+            conexao.Open();
+
+            string selectSql = "SELECT Tipo FROM Usuario WHERE Email = @Email";
+            using var cmd = new SQLiteCommand(selectSql, conexao);
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+                return reader["Tipo"].ToString();
+
+            return null;
+        }
     }
 }
