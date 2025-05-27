@@ -65,8 +65,7 @@
               "RelativeToolTip": "WebApp\\Views\\Registro\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-22T17:20:41.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T17:20:41.56Z"
             },
             {
               "$type": "Document",
@@ -139,8 +138,7 @@
               "RelativeToolTip": "Data\\Services\\EmailServices.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAMwB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T14:31:26.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T14:31:26.06Z"
             },
             {
               "$type": "Document",
@@ -165,8 +163,7 @@
               "RelativeToolTip": "Data\\Repository\\UsuarioRepository.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAMwC0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T14:31:26.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T14:31:26.033Z"
             },
             {
               "$type": "Document",
@@ -178,8 +175,7 @@
               "RelativeToolTip": "WebApp\\Controllers\\PaginaInicialController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T14:31:26.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T14:31:26.096Z"
             },
             {
               "$type": "Document",
@@ -191,8 +187,7 @@
               "RelativeToolTip": "WebApp\\Controllers\\RegistroController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T14:31:26.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T14:31:26.114Z"
             }
           ]
         }
