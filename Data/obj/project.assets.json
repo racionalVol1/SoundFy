@@ -1215,23 +1215,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\p051605\\.nuget\\packages\\": {},
+    "C:\\Users\\guilh\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\p051605\\OneDrive - rede.sp\\Área de Trabalho\\Projeto\\SoundFy\\Data\\Data.csproj",
+      "projectUniqueName": "c:\\dev\\SoundFy\\SoundFy\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\p051605\\OneDrive - rede.sp\\Área de Trabalho\\Projeto\\SoundFy\\Data\\Data.csproj",
-      "packagesPath": "C:\\Users\\p051605\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\p051605\\OneDrive - rede.sp\\Área de Trabalho\\Projeto\\SoundFy\\Data\\obj\\",
+      "projectPath": "c:\\dev\\SoundFy\\SoundFy\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
+      "outputPath": "c:\\dev\\SoundFy\\SoundFy\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\p051605\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1240,7 +1240,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1259,7 +1258,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -1286,7 +1285,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

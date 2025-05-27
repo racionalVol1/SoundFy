@@ -30,3 +30,19 @@ C:\dev\Projeto estagio\SoundFy\Data\obj\Debug\net9.0\Data.csproj.CoreCompileInpu
 C:\dev\Projeto estagio\SoundFy\Data\obj\Debug\net9.0\Data.sourcelink.json
 C:\dev\Projeto estagio\SoundFy\Data\obj\Debug\net9.0\Data.genruntimeconfig.cache
 C:\dev\Projeto estagio\SoundFy\Data\obj\Debug\net9.0\ref\Data.dll
+C:\dev\SoundFy\SoundFy\Data\bin\Debug\net9.0\BancoDeDados\SoundFy.db
+C:\dev\SoundFy\SoundFy\Data\bin\Debug\net9.0\Data.deps.json
+C:\dev\SoundFy\SoundFy\Data\bin\Debug\net9.0\Data.runtimeconfig.json
+C:\dev\SoundFy\SoundFy\Data\bin\Debug\net9.0\Data.dll
+C:\dev\SoundFy\SoundFy\Data\bin\Debug\net9.0\Data.pdb
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.csproj.AssemblyReference.cache
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.AssemblyInfoInputs.cache
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.AssemblyInfo.cs
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.csproj.CoreCompileInputs.cache
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.sourcelink.json
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.dll
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\refint\Data.dll
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.pdb
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\Data.genruntimeconfig.cache
+C:\dev\SoundFy\SoundFy\Data\obj\Debug\net9.0\ref\Data.dll

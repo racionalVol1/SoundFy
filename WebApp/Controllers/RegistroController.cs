@@ -6,43 +6,38 @@ namespace SoundFy.Controllers
 {
     public class RegistroController : Controller
     {
-        //Criação de objetos
         UsuarioRepository usuarioRepository = new UsuarioRepository();
         EmailServices emailServices = new EmailServices();
 
-        //Retorno de view da pagina de registro
+        // Método para retornar a view de registro
         public IActionResult Index()
         {
             return View();
         }
 
-        //Metodo para registrar usuario
+        // Método para registrar um novo usuário
         [HttpPost]
-        public IActionResult Registrar(string email, string senha)
+        public IActionResult Registrar(string email, string senha, string tipo)
         {
-
-
-            if (usuarioRepository.RegistrarUsuario(email, senha))
-            {
-                return RedirectToAction("Index", "login");
-            }
             if (usuarioRepository.ValidaUsuarioExistente(email))
             {
-                ViewBag.Mensagem = "Usuario ja cadastrado.";
-                return RedirectToAction("index", "login");
-            }
-            else
-            {
-                ViewBag.Mensagem = "Erro ao registrar usuário.";
+                ViewBag.Mensagem = "Usuário já cadastrado.";
                 return View("Index");
             }
+
+            if (usuarioRepository.RegistrarUsuario(email, senha, tipo))
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            ViewBag.Mensagem = "Erro ao registrar usuário.";
+            return View("Index");
         }
 
-        //Metodo para enviar email de confirmação
+        // Método para enviar o e-mail de confirmação
         [HttpGet]
         public IActionResult ConfirmarEmail(string email)
         {
-
             var confirmado = emailServices.ConfirmarEmail(email);
 
             TempData["Mensagem"] = confirmado
@@ -51,6 +46,5 @@ namespace SoundFy.Controllers
 
             return RedirectToAction("Index", "Login");
         }
-
     }
 }
