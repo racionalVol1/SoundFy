@@ -23,7 +23,8 @@
 
             // Retorno de view da pagina de login
             public IActionResult Index()
-            {
+            
+        {
                 GerarCaptcha();
                 return View();
             }

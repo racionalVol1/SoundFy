@@ -1,11 +1,14 @@
-﻿using System.Data.SQLite;
-using Data.Services;
+﻿using Data.Services;
+using Microsoft.Data.Sqlite;
+using System;
+using System.Data.SQLite;
+using System.IO;
 
 namespace SoundFy.Data
 {
     public class UsuarioRepository
     {
-        private readonly string caminhoBanco = @"Data Source=C:\dev\SoundFy\SoundFy\Data\BancoDeDados\SoundFy.db";
+        private readonly string caminhoBanco = $@"Data Source={Path.Combine(AppContext.BaseDirectory, "Data", "BancoDeDados", "SoundFy.db")}";
 
         // Valida o usuário com email e senha
         public bool ValidarUsuario(string email, string senha)
@@ -36,7 +39,7 @@ namespace SoundFy.Data
             return reader.Read();
         }
 
-    //Registra um novo usuário no banco de dados
+        //Registra um novo usuário no banco de dados
         public bool RegistrarUsuario(string email, string senha, string tipo)
         {
             try

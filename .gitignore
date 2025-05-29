@@ -1,0 +1,58 @@
+# .NET
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.vsscc
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# Banco de dados local
+Data/BancoDeDados/SoundFy.db
+WebApp/bin/Debug/net*/BancoDeDados/SoundFy.db
+WebApp/bin/Release/net*/BancoDeDados/SoundFy.db
+
+# Arquivos de configuração locais
+appsettings.Development.json
+WebApp/appsettings.Development.json
+WebApp/bin/Debug/net*/appsettings.Development.json
+WebApp/bin/Release/net*/appsettings.Development.json
+
+# Pacotes NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Outros arquivos temporários e do sistema
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Arquivos de publicação
+publish/
+out/
