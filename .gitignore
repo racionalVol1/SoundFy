@@ -1,8 +1,10 @@
-# .NET
+# Build pastas
 bin/
 obj/
 [Bb]in/
 [Oo]bj/
+
+# Arquivos de usuário e configurações pessoais
 *.user
 *.suo
 *.userosscache
@@ -10,6 +12,7 @@ obj/
 
 # Visual Studio
 .vs/
+.vscode/
 *.dbmdl
 *.pdb
 *.cache
@@ -24,35 +27,44 @@ obj/
 *.VC.db
 *.VC.opendb
 
-# Banco de dados local
+# Banco de dados local (arquivos específicos)
 Data/BancoDeDados/SoundFy.db
 WebApp/bin/Debug/net*/BancoDeDados/SoundFy.db
 WebApp/bin/Release/net*/BancoDeDados/SoundFy.db
 
-# Arquivos de configuração locais
+# Arquivos de configuração locais (geralmente não versionar)
 appsettings.Development.json
 WebApp/appsettings.Development.json
 WebApp/bin/Debug/net*/appsettings.Development.json
 WebApp/bin/Release/net*/appsettings.Development.json
 
-# Pacotes NuGet
+# Pacotes NuGet e artefatos
 packages/
 *.nupkg
 project.lock.json
 project.fragment.lock.json
 artifacts/
 
-# Rider/JetBrains
+# JetBrains Rider
 .idea/
 *.sln.iml
 
-# Outros arquivos temporários e do sistema
+# Arquivos temporários e sistema
 *.tmp
 *.bak
 *.swp
 *.DS_Store
 Thumbs.db
 
-# Arquivos de publicação
+# Publicação / deploy
 publish/
 out/
+
+# Pastas e arquivos de build ou temporários dentro de projetos
+**/bin/
+**/obj/
+
+# Ignorar arquivos de backup, antigos e rejeitados
+*.old
+*.orig
+*.rej
