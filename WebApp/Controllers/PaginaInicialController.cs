@@ -7,7 +7,12 @@ namespace SoundFy.Controllers
         //Retorno de view da pagina inicial
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.Session.GetString("logado") != "true")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            return View(); 
         }
     }
 }

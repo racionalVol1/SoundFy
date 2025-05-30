@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using Microsoft.Data.Sqlite;
 using System.Net.Mail;
 
-namespace Data.Services
+namespace Business.Utilities
 {
-    public class EmailServices
+    public class EmailUltilities
     {
         //Caminho do banco de dados
         string caminhoBanco = $@"Data Source=""{Path.Combine(AppContext.BaseDirectory, "BancoDeDados", "SoundFy.db")}""";
@@ -27,13 +25,15 @@ namespace Data.Services
         {
             try
             {
-                using var smtpClient = CriarSmtpClient();
-                var mensagem = new MailMessage("nao-responda@soundfy.com", destinatario)
+                using (var smtpClient = CriarSmtpClient())
                 {
-                    Subject = assunto,
-                    Body = corpo
-                };
-                smtpClient.Send(mensagem);
+                    var mensagem = new MailMessage("nao-responda@soundfy.com", destinatario)
+                    {
+                        Subject = assunto,
+                        Body = corpo
+                    };
+                    smtpClient.Send(mensagem);
+                }
             }
             catch (Exception ex)
             {
@@ -44,14 +44,17 @@ namespace Data.Services
         //Metodo para confimar email ao logar
         public bool ConfirmarEmail(string email)
         {
-            using var conexao = new SQLiteConnection(caminhoBanco);
-            conexao.Open();
+            using (var conexao = new SqliteConnection(caminhoBanco))
+            {
+                conexao.Open();
 
-            string sql = "UPDATE Usuario SET EmailConfirmado = 1 WHERE Email = @Email";
-            using var cmd = new SQLiteCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@Email", email);
-
-            return cmd.ExecuteNonQuery() > 0;
+                string sql = "UPDATE Usuario SET EmailConfirmado = 1 WHERE Email = @Email";
+                using (var cmd = new SqliteCommand(sql, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
         }
 
         //Metodo para enviar email de confirmação ao criar conta

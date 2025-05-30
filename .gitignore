@@ -34,7 +34,7 @@ Data/BancoDeDados/SoundFy.db
 WebApp/bin/Debug/net*/BancoDeDados/SoundFy.db
 WebApp/bin/Release/net*/BancoDeDados/SoundFy.db
 
-# Arquivos de configuração locais
+# Arquivos de configuração locais (ignorar configurações de desenvolvimento locais)
 appsettings.Development.json
 WebApp/appsettings.Development.json
 WebApp/bin/Debug/net*/appsettings.Development.json
@@ -66,3 +66,23 @@ out/
 *.old
 *.orig
 *.rej
+
+# ======================
+# Regras específicas por pasta
+# ======================
+
+# Pasta WebApp
+WebApp/bin/
+WebApp/obj/
+WebApp/WebApp.csproj.user
+WebApp/appsettings.Development.json
+
+# Pasta Data
+Data/bin/
+Data/obj/
+Data/Data.csproj.user
+
+# Pasta Business
+Business/bin/
+Business/obj/
+Business/Business.csproj.user

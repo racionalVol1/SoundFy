@@ -1,4 +1,4 @@
-﻿using Data.Services;
+﻿using Business.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using SoundFy.Data;
 
@@ -6,8 +6,9 @@ namespace SoundFy.Controllers
 {
     public class RegistroController : Controller
     {
+        //Criação de objetos
         UsuarioRepository usuarioRepository = new UsuarioRepository();
-        EmailServices emailServices = new EmailServices();
+        EmailUltilities emails = new EmailUltilities();
 
         // Método para retornar a view de registro
         public IActionResult Index()
@@ -38,7 +39,7 @@ namespace SoundFy.Controllers
         [HttpGet]
         public IActionResult ConfirmarEmail(string email)
         {
-            var confirmado = emailServices.ConfirmarEmail(email);
+            var confirmado = emails.ConfirmarEmail(email);
 
             TempData["Mensagem"] = confirmado
                 ? "E-mail confirmado com sucesso!"
