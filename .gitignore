@@ -1,0 +1,91 @@
+# Pastas de build e saída
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Arquivos de usuário e configurações pessoais
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configurações do editor - ignorando pastas .vs e .vscode
+.vs/
+.vscode/
+
+# Visual Studio arquivos temporários e caches
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.vsscc
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# Banco de dados local (arquivos específicos)
+# Comentado para permitir que o .db seja versionado se estiver em Data/SoundFy.db
+Data/BancoDeDados/SoundFy.db
+# WebApp/bin/Debug/net*/BancoDeDados/SoundFy.db
+# WebApp/bin/Release/net*/BancoDeDados/SoundFy.db
+
+# Arquivos de configuração locais (ignorar configurações de desenvolvimento locais)
+appsettings.Development.json
+WebApp/appsettings.Development.json
+WebApp/bin/Debug/net*/appsettings.Development.json
+WebApp/bin/Release/net*/appsettings.Development.json
+
+# Pacotes NuGet e artefatos
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Arquivos temporários e do sistema
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Arquivos de publicação e output
+publish/
+out/
+
+# Ignorar backups e arquivos rejeitados
+*.old
+*.orig
+*.rej
+
+# ======================
+# Regras específicas por pasta
+# ======================
+
+# Pasta WebApp
+WebApp/bin/
+WebApp/obj/
+WebApp/WebApp.csproj.user
+WebApp/appsettings.Development.json
+
+# Pasta Data
+Data/bin/
+Data/obj/
+Data/Data.csproj.user
+Data/BancoDeDados/SoundFy.db
+Data/*.sqlbro # Adicionado para ignorar scripts .sqlbro na pasta Data
+
+# Pasta Business
+Business/bin/
+Business/obj/
+Business/Business.csproj.user

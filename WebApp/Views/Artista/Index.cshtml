@@ -1,0 +1,65 @@
+﻿@model List<Data.Models.MusicaModel>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>SoundFy</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <h1 class="navbar-brand mb-0">SoundFy</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex mx-auto" role="search" style="flex-grow: 1; max-width: 500px;">
+                    <input class="form-control me-2" type="search" placeholder="Procure uma música" aria-label="Search">
+                    <button class="btn btn-secondary" type="submit">Buscar</button>
+                </form>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="@Url.Action("Deslogar", "Login")">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <a class="btn btn-success mb-3" href="@Url.Action("AdicionarMusica", "Artista")">Adicionar música</a>
+
+        <h3>Músicas cadastradas</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Artista</th>
+                    <th>Gênero</th>
+                    <th>Ano</th>
+                    <th>Arquivo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var musica in Model)
+                {
+                    <tr>
+                        <td>@musica.Titulo</td>
+                        <td>@musica.NomeArtista</td>
+                        <td>@musica.Genero</td>
+                        <td>@musica.Ano</td>
+                        <td>@musica.NomeArquivo</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
