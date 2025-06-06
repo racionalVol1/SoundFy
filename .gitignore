@@ -83,7 +83,7 @@ Data/bin/
 Data/obj/
 Data/Data.csproj.user
 Data/BancoDeDados/SoundFy.db
-Data/*.sqlbro # Adicionado para ignorar scripts .sqlbro na pasta Data
+Data/*.sqlbro
 
 # Pasta Business
 Business/bin/
