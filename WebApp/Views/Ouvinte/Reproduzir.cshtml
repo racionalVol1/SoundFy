@@ -14,6 +14,12 @@
         <p><strong>Gênero:</strong> @Model.Genero</p>
         <p><strong>Ano:</strong> @Model.Ano</p>
         <p><strong>Arquivo:</strong> @Model.NomeArquivo</p>        
+
+        <audio controls class="w-100 mt-3">
+            <source src="@Url.Action("StreamAudio", "Ouvinte", new { id = Model.Id })" type="audio/mpeg" />
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
         <a href="@Url.Action("Index", "Ouvinte")" class="btn btn-secondary mt-3">Voltar</a>
     </div>
 </body>

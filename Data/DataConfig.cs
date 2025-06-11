@@ -12,6 +12,6 @@ namespace Data.Config
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
  
             return builder.Build();
-        }
-    }
+        }
+    }
 }

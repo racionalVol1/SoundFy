@@ -8,6 +8,7 @@ namespace Business.Utilities
         //Caminho do banco de dados
         string caminhoBanco = $@"Data Source=""{Path.Combine(AppContext.BaseDirectory, "BancoDeDados", "SoundFy.db")}""";
 
+        //Lista para armazenar códigos de recuperação
         private static readonly List<string> codigosRecuperacao = new List<string>();
 
         //Criar SMTP Client
@@ -74,7 +75,6 @@ namespace Business.Utilities
         }
 
         //Metodo que gera um código de recuperação e envia para o email
-
         public string GerarCodigoRecuperacao()
         {
             var random = new Random();

@@ -8,8 +8,8 @@ namespace SoundFy.Data
     public class UsuarioRepository
     {
 
-        //Criação de objetos        
-        EmailUltilities emails = new EmailUltilities();
+        // Criação da instancia do EmailUltilities para enviar emails
+        private readonly EmailUltilities emails = new EmailUltilities();       
 
         // Caminho do banco de dados
         private readonly string caminhoBanco;

@@ -10,9 +10,13 @@ namespace Data.Repository
     public class ArtistaRepository
     {
 
-        EmailUltilities emails = new EmailUltilities();
+        // Criação da instancia do EmailUltilities para enviar emails
+        private readonly EmailUltilities emails = new EmailUltilities();
+
+        // Caminho do banco de dados
         private readonly string caminhoBanco;
 
+        // Construtor que carrega configurações do banco de dados
         public ArtistaRepository()
         {
             IConfigurationRoot config = ConfigHelper.LoadConfiguration();
