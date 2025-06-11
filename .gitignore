@@ -1,0 +1,90 @@
+# ========================
+# BUILD E SAÍDA
+# ========================
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# ========================
+# ARQUIVOS DE USUÁRIO E CONFIGURAÇÕES PESSOAIS
+# ========================
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ========================
+# CONFIGURAÇÕES DE EDITOR
+# ========================
+.vs/
+.vscode/
+
+# ========================
+# VISUAL STUDIO: TEMPORAIS E CACHES
+# ========================
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.vsscc
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# ========================
+# BANCO DE DADOS E SQLBRO
+# ========================
+*.db
+!Data/BancoDeDados/SoundFy.db
+*.sqbpro
+
+# ========================
+# CONFIGURAÇÕES LOCAIS
+# ========================
+appsettings.Development.json
+WebApp/appsettings.Development.json
+WebApp/bin/Debug/net*/appsettings.Development.json
+WebApp/bin/Release/net*/appsettings.Development.json
+
+# ========================
+# PACOTES E ARTEFATOS
+# ========================
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ========================
+# RIDER / JETBRAINS
+# ========================
+.idea/
+*.sln.iml
+
+# ========================
+# TEMPORÁRIOS E SISTEMA
+# ========================
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# ========================
+# PUBLICAÇÃO E OUTPUT
+# ========================
+publish/
+out/
+
+# ========================
+# BACKUPS E REJEITADOS
+# ========================
+*.old
+*.orig
+*.rej
