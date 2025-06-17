@@ -10,6 +10,12 @@ namespace SoundFy.Controllers
         UsuarioRepository usuarioRepository = new UsuarioRepository();
         EmailUltilities emails = new EmailUltilities();
 
+        // Pagina de erro
+        public IActionResult Erro()
+        {
+            return View("Erro");
+        }
+
         // Método para retornar a view de registro
         public IActionResult Index()
         {

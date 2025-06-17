@@ -5,6 +5,11 @@ namespace WebApp.Controllers
 {
     public class ArtistaController : Controller
     {
+        // Pagina de erro
+        public IActionResult Erro()
+        {
+            return View("Erro");
+        }
 
         // Criação da instancia do ArtistaRepository para manipular músicas
         ArtistaRepository artistaRepository = new ArtistaRepository();
@@ -74,6 +79,6 @@ namespace WebApp.Controllers
                 TempData["MensagemErro"] = "Erro ao excluir música.";
 
             return RedirectToAction("Index");
-        }
+        }   
     }
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundFy</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/layout.css")" />
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">SoundFy</div>
+
+        <input type="text" class="barra-pesquisa" placeholder="O que voce quer ouvir?">
+        
+        <nav class="links">
+            <a href="@Url.Action("Index")">Perfil</a>        
+            <a href="@Url.Action("Deslogar", "Login")">Sair</a>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+    </div>
+
+</body>
+
+</html>

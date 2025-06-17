@@ -1,26 +1,19 @@
 @model Data.Models.MusicaModel
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Reproduzir Música</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-4">
-        <h2>@Model.Titulo</h2>
-        <p><strong>Artista:</strong> @Model.NomeArtista</p>
-        <p><strong>Gênero:</strong> @Model.Genero</p>
-        <p><strong>Ano:</strong> @Model.Ano</p>
-        <p><strong>Arquivo:</strong> @Model.NomeArquivo</p>        
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Reproduzir Música";
+}
 
-        <audio controls class="w-100 mt-3">
-            <source src="@Url.Action("StreamAudio", "Ouvinte", new { id = Model.Id })" type="audio/mpeg" />
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
+<h2>@Model.Titulo</h2>
+<p><strong>Artista:</strong> @Model.NomeArtista</p>
+<p><strong>Gênero:</strong> @Model.Genero</p>
+<p><strong>Ano:</strong> @Model.Ano</p>
+<p><strong>Arquivo:</strong> @Model.NomeArquivo</p>
 
-        <a href="@Url.Action("Index", "Ouvinte")" class="btn btn-secondary mt-3">Voltar</a>
-    </div>
-</body>
-</html>
+<audio controls class="w-100 mt-3">
+    <source src="@Url.Action("StreamAudio", "Ouvinte", new { id = Model.Id })" type="audio/mpeg" />
+    Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<a href="@Url.Action("Index", "Ouvinte")" class="btn btn-secondary mt-3">Voltar</a>

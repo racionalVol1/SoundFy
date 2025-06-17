@@ -10,6 +10,12 @@ namespace WebApp.Controllers
         ArtistaRepository artistaRepository = new ArtistaRepository();
         OuvinteRepository ouvinteRepository = new OuvinteRepository();
 
+        // Pagina de erro
+        public IActionResult Erro()
+        {
+            return View("Erro");
+        }
+
         public IActionResult Index()
         {
             if (HttpContext.Session.GetString("logado") != "true")

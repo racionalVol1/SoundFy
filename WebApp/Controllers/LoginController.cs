@@ -7,6 +7,11 @@ namespace SoundFy.Controllers
 {
     public class LoginController : Controller
     {
+        // Pagina de erro
+        public IActionResult Erro()
+        {
+            return View("Erro");
+        }
 
         //Criação de objetos
         UsuarioRepository usuarioRepository = new UsuarioRepository();
